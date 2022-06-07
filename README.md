@@ -24,31 +24,39 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
     implementation "com.jakewharton.rxbinding4:rxbinding:4.0.0"
 ```
 
-## 김뚜벅씨가 구상한 앱의 초안
+## 🧐 김뚜벅씨가 구상한 앱의 초안 
 
 1. 안드로이드 API Level 23 이상을 지원
     - minSdk 23
 
 2. UTF-8, JSON 형식의 서울의 지하철역 중 일부의 위·경도 좌표, HTTP 통신
     - 간단한 RestAPI Server 서비스(무료) 이용
- - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
+    - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
 
 3. 갓-디자이너 님의 디자인 👏
- - UI 구조 : 1개의 액티비티
+    - UI 구조 : 1개의 액티비티
 
 4. 서울숲 역을 중심으로 4km 이내에 있는 역들을 표시
- - 두 좌표간 거리를 구해 서울숲 역으로부터 4km 내 역들을 표시 (Utils.kt\getDistance())
+    - 두 좌표간 거리를 구해 서울숲 역으로부터 4km 내 역들을 표시 (Utils.kt\getDistance())
 
 5. 지도는 구글 또는 네이버의 안드로이드 지도 라이브러리를 사용
- - 최근 국내 대표적인 서비스들에서 자주 사용되는 [NaverMap](https://www.ncloud.com/product/applicationService/maps) 선택
+    - 최근 국내 대표적인 서비스들에서 자주 사용되는 [NaverMap](https://www.ncloud.com/product/applicationService/maps) 선택
 
 6. 지도 제공자 라이선스 표시만 남겨두고 모두 숨김
- - ```kotlin
+    - ```kotlin
     isZoomControlEnabled = false
     isCompassEnabled = false
     isLocationButtonEnabled = false
     isScaleBarEnabled = false
 ```
+
+7. 대상이 되는 역들을 모두 표현하는 적당한 범위에서, 드래그, 확대, 축소
+    - 초기에 대상 역을 모두 표시하기 위해 줌레벨 조절 및 필요 이상의 줌 레벨 제한
+    
+8. 환승역은 10dp 노란 원, 환승역이 아니면 10dp 검은 원
+    - 역 정보를 HashMap 형태의 자료구조에 담고 count를 통해 동일한 역이름이 2개 이상 존재하면 환승역으로 판단
+    
+9. 
 
 ## 김뚜벅씨가 만들고 싶은 앱
 ```
