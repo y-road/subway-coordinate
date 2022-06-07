@@ -30,7 +30,7 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
     - minSdk 23
 
 2. UTF-8, JSON 형식의 서울의 지하철역 중 일부의 위·경도 좌표, HTTP 통신
- - 간단한 RestAPI Server 서비스(무료) 이용
+    - 간단한 RestAPI Server 서비스(무료) 이용
  - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
 
 3. 갓-디자이너 님의 디자인 👏
