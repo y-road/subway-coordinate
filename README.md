@@ -2,11 +2,11 @@
 
 ![Build Status](https://img.shields.io/badge/version-v0.3.0-orange) ![Build Status](https://img.shields.io/badge/I_love-socar-blue)
 
-# 뚜벅이의 지하철 생활 🦵
+# 뚜벅이의 지하철 생활
 ```
 네이버 맵을 통해 서울숲 근방의 지하철역들을 파악합니다
 ```
-## 💎 Libraries
+## Libraries
 ```Retrofit2``` ```Okhttp3``` ```NaverMap``` ```Coroutine``` ```RxBinding (throttleLast)```
 ```kotlin
     //Retrofit2
@@ -24,7 +24,7 @@
     implementation "com.jakewharton.rxbinding4:rxbinding:4.0.0"
 ```
 
-## 🧐 김뚜벅씨가 구상한 앱의 초안 
+## 김뚜벅씨가 구상한 앱의 초안 
 
 1. 안드로이드 API Level 23 이상을 지원
     - ```minSdk 23```
@@ -33,7 +33,7 @@
     - 간단한 RestAPI Server [서비스](https://my-json-server.typicode.com) 이용 
     - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
 
-3. 갓-디자이너 님의 디자인 👏
+3. 갓-디자이너 님의 디자인 
     - UI 구조 : 1개의 액티비티
 
 4. 서울숲 역을 중심으로 4km 이내에 있는 역들을 표시
@@ -72,7 +72,7 @@
     - 중복 터치 이벤트 방지를 위해 ```throttleLast``` 사용
       
 
-## 🏹 김뚜벅씨가 만들고 싶은 앱
+## 김뚜벅씨가 만들고 싶은 앱
 
 1. 적절한 커밋 메시지와 주석
     - ```Git-flow```에 따른 코드 관리, ```Git Convention```에 커밋 관리, ```Semantic Versioning```에 따른 태그 관리
