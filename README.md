@@ -56,11 +56,25 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
 8. 환승역은 10dp 노란 원, 환승역이 아니면 10dp 검은 원
     - 역 정보를 HashMap 형태의 자료구조에 담고 count를 통해 동일한 역이름이 2개 이상 존재하면 환승역으로 판단
     
-9. 
+9. 출발역과 도착역 지정 관련 전체적인 기능
+    - 뷰모델에 3개의 변수(사용자가 선택한 역, 출발역, 도착역)를 사용하여 요구 기능 구현
+
+10. 유저가 백 버튼을 눌러 액티비티를 종료할 때는, 선택 상태를 보존하지 않음
+    - ```kotlin
+        override fun onBackPressed() {
+            super.onBackPressed()
+            finish()
+        }
+      ```
+
+11. 화면 아래 출발역과 도착역 관련 전체적인 기능
+    - 출발역과 도착역에 대한 MutableLiveData를 지정하여 View 이벤트 처리
+    - 중복 터치 이벤트 방지를 위해 throttleLast 사용
+      
 
 ## 김뚜벅씨가 만들고 싶은 앱
 ```
- -  Git-flow에 따른 코드, 커밋 Convention에 따른 커밋 메시지, Semantic Versioning에 따른 태그 관리
+ - Git-flow에 따른 코드, 커밋 Convention에 따른 커밋 메시지, Semantic Versioning에 따른 태그 관리
  - MVVM 패턴
  - 출발역과 도착역의 View 선택시 지도의 중심 이동 - 중복 터치 방지를 위해 throttleLast 사용 (RxBinding)
  - Map에 표시될 Marker 초기화시 Coroutine 활용
