@@ -7,7 +7,7 @@
 네이버 맵을 통해 서울숲 근방의 지하철역들을 파악합니다
 ```
 ## Libraries
-Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
+```Retrofit2``` ```Okhttp3``` ```NaverMap``` ```Coroutine``` ```RxBinding (throttleLast)```
 ```kotlin
     //Retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
