@@ -54,10 +54,10 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
     - 초기에 대상 역을 모두 표시하기 위해 줌레벨 조절 및 필요 이상의 줌 레벨 제한
     
 8. 환승역은 10dp 노란 원, 환승역이 아니면 10dp 검은 원
-    - 역 정보를 HashMap 형태의 자료구조에 담고 count를 통해 동일한 역이름이 2개 이상 존재하면 환승역으로 판단
+    - 역 정보를 ```HashMap``` 형태의 자료구조에 담고 ```count```를 통해 동일한 역이름이 2개 이상 존재하면 환승역으로 판단
     
 9. 출발역과 도착역 지정 관련 전체적인 기능
-    - 뷰모델에 3개의 변수(사용자가 선택한 역, 출발역, 도착역)를 사용하여 요구 기능 구현
+    - 뷰모델에 3개의 변수(사용자가 선택한 역, 출발역, 도착역)에 대해 ```MutableLiveData``` 지정하여 요구 기능 구현
 
 10. 유저가 백 버튼을 눌러 액티비티를 종료할 때는, 선택 상태를 보존하지 않음
     - ```kotlin
@@ -72,14 +72,28 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
     - 중복 터치 이벤트 방지를 위해 throttleLast 사용
       
 
-## 김뚜벅씨가 만들고 싶은 앱
-```
- - Git-flow에 따른 코드, 커밋 Convention에 따른 커밋 메시지, Semantic Versioning에 따른 태그 관리
- - MVVM 패턴
- - 출발역과 도착역의 View 선택시 지도의 중심 이동 - 중복 터치 방지를 위해 throttleLast 사용 (RxBinding)
- - Map에 표시될 Marker 초기화시 Coroutine 활용
- - 화면 회전시 데이터 유지, 로케일 변경(한국어, 영어), 배율 변경 지원
- - Okhttp3와 Retrofit2를 활용한 네트워크 에러 대응
- - 앱 실행 전 res\raw\station_coordinate.json 을 활용한 mock (SubwayApplication.kt)
- - 제공된 aws의 Json의 경우 시간이 경과됨에 따라 파라미터 값 중 'X-Amz-Expires=86400&X-Amz-Signature' 값이 변경되어 지속적인 통신이 불가능해 간단한 RestAPI Server 서비스(무료)를 이용함 (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
-```
+## 🏹 김뚜벅씨가 만들고 싶은 앱
+
+1. 적절한 커밋 메시지와 주석
+    - ```Git-flow```에 따른 코드 관리, ```Git Convention```에 커밋 관리, ```Semantic Versioning```에 따른 태그 관리
+
+2. 잘 알려진 코드 아키텍쳐의 개념과 취지에 맞게 코드를 구성
+    - ```MVVM 패턴```
+
+3. Rx 라이브러리를 사용
+    - 출발역과 도착역 터치시 지도의 중심 이동: ```RXBinding``` 사용, ```throttleLast```를 이용해 중복 터치 이벤트 방지
+
+4. 네트워킹과 지도 초기화, UI 반응 등이 적절한 스레드에서 비동기적으로 작동
+    - Map에 표시할 Marker 초기화시 ```Coroutine``` 활용
+
+5. 안드로이드 컴포넌트들의 생명 주기 관리에 따라, 여러 유저 시나리오에서 UI가 안정적으로 작동
+    - 액티비티의 onCreate() 부분에서 뷰모델 메모리에 있는 데이터를 참조하는 방식으로 액티비티 재시작시에도 일관된 UI 유지
+
+6. 시스템 설정에서 배율, 로케일, 화면 방향 등을 조절해도 디자인을 적절하게 반영
+    - 화면 회전시 데이터 유지, 로케일 변경(한국어, 영어), 최소한의 다크 모드 지원
+
+7. 네트워크 에러 등의 문제 상황에 대해 적절한 조처
+    - ```Okhttp3```와 ```Retrofit2```를 활용한 네트워크 에러 대응
+
+8. 좌표 데이터를 받아오는 네트워킹 코드를 짜지만, 아직 실제로 원격에서 받아오지는 않고, mock 해서 로컬에서 가져오기
+    - 앱 실행 전 ```res\raw\station_coordinate.json``` 을 활용한 mock ```SubwayApplication.kt```
