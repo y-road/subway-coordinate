@@ -47,7 +47,8 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
     isZoomControlEnabled = false
     isCompassEnabled = false
     isLocationButtonEnabled = false
-    isScaleBarEnabled = false```
+    isScaleBarEnabled = false
+    ```
 
 7. 대상이 되는 역들을 모두 표현하는 적당한 범위에서, 드래그, 확대, 축소
     - 초기에 대상 역을 모두 표시하기 위해 줌레벨 조절 및 필요 이상의 줌 레벨 제한
