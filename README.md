@@ -27,7 +27,7 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
 ## 김뚜벅씨가 구상한 앱의 초안
 
 1. 안드로이드 API Level 23 이상을 지원
- - minSdk 23
+- minSdk 23
 
 2. UTF-8, JSON 형식의 서울의 지하철역 중 일부의 위·경도 좌표, HTTP 통신
  - 간단한 RestAPI Server 서비스(무료) 이용
