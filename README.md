@@ -6,7 +6,7 @@
 ```
 네이버 맵을 통해 서울숲 근방의 지하철역들을 파악합니다
 ```
-## Implementations
+## Libraries
 Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
 ```kotlin
     //Retrofit2
@@ -25,34 +25,30 @@ Retrofit2 | Okhttp3 | NaverMap | Coroutine | RxBinding (throttleLast)
 ```
 
 ## 김뚜벅씨가 구상한 앱의 초안
-```
+
 안드로이드 API Level 23 이상을 지원
-```
  - minSdk 23
-```
+
 UTF-8, JSON 형식의 서울의 지하철역 중 일부의 위·경도 좌표, HTTP 통신
-```
  - 간단한 RestAPI Server 서비스(무료) 이용
  - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
-```
+
 갓-디자이너 님의 디자인 👏
-```
  - 1개의 액티비티 구조
-```
+
 서울숲 역을 중심으로 4km 이내에 있는 역들을 표시
-```
  - 두 좌표간 거리를 구해 서울숲 역으로부터 4km 내 역들을 표시 (Utils.kt\getDistance())
-```
+
 지도는 구글 또는 네이버의 안드로이드 지도 라이브러리를 사용
-```
  - 최근 국내 대표적인 서비스들에서 자주 사용되는 Naver Map 선택
-```
+
 지도 제공자 라이선스 표시만 남겨두고 모두 숨김
+ - ```kotlin
+    isZoomControlEnabled = false
+    isCompassEnabled = false
+    isLocationButtonEnabled = false
+    isScaleBarEnabled = false
 ```
-isZoomControlEnabled = false
-isCompassEnabled = false
-isLocationButtonEnabled = false
-isScaleBarEnabled = false
 
 ## 김뚜벅씨가 만들고 싶은 앱
 ```
