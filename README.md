@@ -27,17 +27,17 @@
 ## 🧐 김뚜벅씨가 구상한 앱의 초안 
 
 1. 안드로이드 API Level 23 이상을 지원
-    - minSdk 23
+    - ```minSdk 23```
 
 2. UTF-8, JSON 형식의 서울의 지하철역 중 일부의 위·경도 좌표, HTTP 통신
-    - 간단한 RestAPI Server 서비스(무료) 이용
+    - 간단한 RestAPI Server [서비스](https://my-json-server.typicode.com) 이용 
     - (https://my-json-server.typicode.com/y-road/subway-coordinate/stations)
 
 3. 갓-디자이너 님의 디자인 👏
     - UI 구조 : 1개의 액티비티
 
 4. 서울숲 역을 중심으로 4km 이내에 있는 역들을 표시
-    - 두 좌표간 거리를 구해 서울숲 역으로부터 4km 내 역들을 표시 (Utils.kt\getDistance())
+    - 두 좌표간 거리를 구해 서울숲 역으로부터 4km 내 역들을 표시 ```Utils.kt\getDistance()```
 
 5. 지도는 구글 또는 네이버의 안드로이드 지도 라이브러리를 사용
     - 최근 국내 대표적인 서비스들에서 자주 사용되는 [NaverMap](https://www.ncloud.com/product/applicationService/maps) 선택
@@ -68,8 +68,8 @@
       ```
 
 11. 화면 아래 출발역과 도착역 관련 전체적인 기능
-    - 출발역과 도착역에 대한 MutableLiveData를 지정하여 View 이벤트 처리
-    - 중복 터치 이벤트 방지를 위해 throttleLast 사용
+    - 출발역과 도착역에 대한 ```MutableLiveData```를 지정하여 View 이벤트 처리
+    - 중복 터치 이벤트 방지를 위해 ```throttleLast``` 사용
       
 
 ## 🏹 김뚜벅씨가 만들고 싶은 앱
