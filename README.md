@@ -2,11 +2,11 @@
 
 ![Build Status](https://img.shields.io/badge/version-v0.3.0-orange) ![Build Status](https://img.shields.io/badge/I_love-socar-blue)
 
-# 뚜벅이의 지하철 생활
+# 뚜벅이의 지하철 생활 🦵
 ```
 네이버 맵을 통해 서울숲 근방의 지하철역들을 파악합니다
 ```
-## Libraries
+## 💎 Libraries
 ```Retrofit2``` ```Okhttp3``` ```NaverMap``` ```Coroutine``` ```RxBinding (throttleLast)```
 ```kotlin
     //Retrofit2
